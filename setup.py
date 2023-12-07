@@ -93,13 +93,18 @@ class BuildExt(build_ext):
             ext.extra_link_args = link_opts
         build_ext.build_extensions(self)
 
+with open('README.md', 'r', encoding='utf-8') as fh:
+    long_description = fh.read()
+
 setup(name='wbgps',
       version='0.1',
       description='Module for GPS mobility data analysis',
-      #  url='http://github.com/ollin18/namehere',
+      url='http://github.com/ollin18/toolkit_for_gps_mobility_data_analysis',
       author='Ollin Demian Langle Chimal, Lucio Melito, Lorenzo Lucchini, Lorenzo Candeago',
       author_email='olanglechimal@worldbank.org',
       license='MIT',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       packages=['wbgps'],
       install_requires=[
           'pandas',
